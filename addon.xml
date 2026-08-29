@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+Chronicle Rating - Context Menu Button
+Version: 1.0.0
+Last Modified: 2026-08-28
+
+Separate addon whose SOLE job is registering the kodi.context.item extension
+point and delegating to script.chronicle.rating. Not bundled into that addon's
+own addon.xml alongside its xbmc.service/xbmc.python.script extensions --
+confirmed live (2026-08-28) that a "Rate on Chronicle" item declared that way
+never actually appeared in Kodi's context menu, the same extension-point-
+bundling problem this codebase's own Chronicle_Scraper hit at v3.0.0 for its
+movie/TV scraper extension points. SIMKL's own working "Rate on SIMKL" button
+uses this exact split (context.simkl.rate -> script.simkl.scrobbler) -- this
+addon mirrors that architecture.
+
+CHANGELOG:
+1.0.0 - Initial release. Splits the context-menu button out of
+        script.chronicle.rating's addon.xml into its own addon, per-user
+        correction (2026-08-28): "there is currently no rate on chronicle
+        menu item like there is for Simkl. we need to duplicate everything
+        we did with Simkl but for chronicle."
+-->
+<addon id="context.chronicle.rate"
+       name="Chronicle Rating - Context Menu Button"
+       version="1.0.0"
+       provider-name="Michael Beck">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.chronicle.rating" version="1.2.0"/>
+    </requires>
+    <extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+            <item library="addon.py">
+                <label>32006</label>
+                <visible>String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)</visible>
+            </item>
+        </menu>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Add "Rate on Chronicle" button to context menu in library</summary>
+        <description lang="en_GB">Adds a "Rate on Chronicle" button to the context menu for movies and episodes in your video library. Requires script.chronicle.rating installed -- this addon only registers the menu item and delegates the actual rating flow to it.</description>
+        <platform>all</platform>
+        <license>MIT</license>
+        <source>https://github.com/thegoddamnbeckster/Chronicle_Rating_Context</source>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+        <news>1.0.0 - Initial release.</news>
+    </extension>
+</addon>

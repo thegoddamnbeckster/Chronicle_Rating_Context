@@ -1,0 +1,18 @@
+# Kodi Media Center language file
+# Addon Name: Chronicle Rating - Context Menu Button
+# Addon id: context.chronicle.rate
+# Addon Provider: Michael Beck
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"Language-Team: English (UK)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_gb\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#32006"
+msgid "Rate on Chronicle"
+msgstr ""
