@@ -15,6 +15,8 @@ uses this exact split (context.simkl.rate -> script.simkl.scrobbler) — this
 addon mirrors that architecture.
 
 CHANGELOG:
+1.0.1 - Fixes invalid XML in this file's own top comment (a double hyphen instead
+        of an em dash, caught by a repo-wide sweep). No functional change.
 1.0.0 - Initial release. Splits the context-menu button out of
         script.chronicle.rating's addon.xml into its own addon, per-user
         correction (2026-08-28): "there is currently no rate on chronicle
@@ -23,7 +25,7 @@ CHANGELOG:
 -->
 <addon id="context.chronicle.rate"
        name="Chronicle Rating - Context Menu Button"
-       version="1.0.0"
+       version="1.0.1"
        provider-name="Michael Beck">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
@@ -46,6 +48,8 @@ CHANGELOG:
         <assets>
             <icon>icon.png</icon>
         </assets>
-        <news>1.0.0 - Initial release.</news>
+        <news>1.0.1 - Fixed invalid XML in this file's own top comment (a "--" instead
+of an em dash). No functional change.
+1.0.0 - Initial release.</news>
     </extension>
 </addon>
