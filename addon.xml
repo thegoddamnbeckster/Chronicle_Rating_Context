@@ -6,12 +6,12 @@ Last Modified: 2026-08-28
 
 Separate addon whose SOLE job is registering the kodi.context.item extension
 point and delegating to script.chronicle.rating. Not bundled into that addon's
-own addon.xml alongside its xbmc.service/xbmc.python.script extensions --
+own addon.xml alongside its xbmc.service/xbmc.python.script extensions —
 confirmed live (2026-08-28) that a "Rate on Chronicle" item declared that way
 never actually appeared in Kodi's context menu, the same extension-point-
 bundling problem this codebase's own Chronicle_Scraper hit at v3.0.0 for its
 movie/TV scraper extension points. SIMKL's own working "Rate on SIMKL" button
-uses this exact split (context.simkl.rate -> script.simkl.scrobbler) -- this
+uses this exact split (context.simkl.rate -> script.simkl.scrobbler) — this
 addon mirrors that architecture.
 
 CHANGELOG:
